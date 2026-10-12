@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#070d2b" />
+<title>MathVerse — Matematika Lanjutan XII</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050b24;--panel:#0b1638;--panel2:#0d1a40;--line:#233b82;--purple:#793cff;--cyan:#09d5ff;--text:#f4f6ff;--muted:#a9b7e9;--green:#18ddb1;--red:#ff5277}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-3;background:radial-gradient(ellipse at 0% 5%,#3b0eae 0,transparent 29%),radial-gradient(ellipse at 100% 100%,#092e98 0,transparent 32%),linear-gradient(135deg,#050920,#071334 65%,#050a26)}
+.math-float{position:fixed;inset:0;overflow:hidden;z-index:-1;pointer-events:none;color:#4639c8}.math-float span{position:absolute;font:italic 38px Georgia,serif;opacity:.38;animation:drift 10s ease-in-out infinite}.math-float span:nth-child(1){left:3%;top:18%}.math-float span:nth-child(2){left:2%;top:44%;animation-delay:-3s}.math-float span:nth-child(3){right:2%;top:13%;animation-delay:-5s}.math-float span:nth-child(4){right:2%;top:37%;animation-delay:-2s}.math-float span:nth-child(5){left:6%;bottom:12%;animation-delay:-6s}.math-float span:nth-child(6){right:15%;bottom:8%;animation-delay:-4s}.math-float span:nth-child(7){left:48%;top:8%;animation-delay:-1s}.math-float span:nth-child(8){right:31%;bottom:5%;animation-delay:-7s}@keyframes drift{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-19px) rotate(5deg)}}
+header{position:relative;border-bottom:1px solid #24377b;background:#08102ce8;backdrop-filter:blur(16px)}.nav{max-width:1370px;margin:auto;padding:18px 28px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--text)}.brand-icon{width:48px;height:48px;border:3px solid #a99aff;color:#d8d1ff;border-radius:12px;display:grid;place-items:center;box-shadow:0 0 25px #6b42f955;font-size:27px;font-weight:800}.brand-name{font:800 27px Manrope,sans-serif;letter-spacing:-.8px}.brand-name em{font-style:normal;color:var(--cyan)}.brand-sub{font-size:13px;color:#c4cff8;margin-top:2px}.nav-right{display:flex;align-items:center;gap:34px}.nav-right a{font-size:14px;color:#c6d1fa;text-decoration:none}.nav-right a.active{color:var(--cyan);font-weight:700}.grade-pill{border:1px solid #5b36f5;border-radius:28px;padding:10px 16px;color:#ddd5ff;font-size:13px;white-space:nowrap;background:#491fd41b}.grade-pill b{color:#a88bff;margin-right:8px}
+main{max-width:1370px;margin:0 auto;padding:28px 28px 52px}.layout{display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:26px;align-items:start}.left-column{min-width:0}.welcome{min-height:104px;padding:18px 25px;border:1px solid #5d3df8;border-radius:19px;background:linear-gradient(105deg,#3515a9 0%,#2229b6 58%,#008dcc 100%);display:flex;align-items:center;gap:23px;position:relative;overflow:hidden;box-shadow:0 15px 42px #02071550;margin-bottom:21px}.welcome:after{content:"∫ x² dx = ⅓x³ + C";position:absolute;right:24px;top:33px;font:italic 23px Georgia,serif;color:#d8e8ff9c;white-space:nowrap}.rocket{width:64px;height:64px;border-radius:50%;background:#6539ff;display:grid;place-items:center;font-size:30px;flex:0 0 auto;box-shadow:0 0 25px #a08aff55}.welcome h2{font:700 19px Manrope,sans-serif;margin:0 0 8px;position:relative;z-index:1}.welcome p{margin:0;color:#d2d7ff;font-size:14px;position:relative;z-index:1}
+.quiz-card,.side-card{border:1px solid #263d83;border-radius:20px;background:linear-gradient(145deg,#0b1739f5,#071331f5);box-shadow:0 22px 55px #0003}.quiz-card{padding:26px 30px 25px}.quiz-head{display:flex;justify-content:space-between;gap:15px;align-items:center;margin-bottom:13px}.q-label{display:flex;align-items:center;gap:11px;font:700 18px Manrope,sans-serif;color:#d5dcff}.paper-icon{font-size:26px;color:#c0caff}.head-pills{display:flex;gap:10px}.mini-pill{border:1px solid #057e77;background:#063a45a6;color:#4af2dd;padding:9px 13px;border-radius:25px;font-size:12px;font-weight:700;white-space:nowrap}.mini-pill.timer{border-color:#174dbb;background:#0d2a69;color:#2ed7ff}.progress-track{height:9px;border-radius:20px;background:#1a2b67;overflow:hidden;margin-bottom:29px}.progress-bar{height:100%;width:10%;border-radius:20px;background:linear-gradient(90deg,#8536ff,#00d9ff);transition:width .35s ease;box-shadow:0 0 18px #00c8ff65}.category{display:inline-block;padding:8px 15px;background:linear-gradient(110deg,#4421c2,#1453c8);border-radius:20px;color:#f0edff;font-size:12px;font-weight:700;margin-bottom:14px}.question{font:700 clamp(20px,2.1vw,26px)/1.55 Manrope,sans-serif;letter-spacing:-.5px;margin:0 0 24px;white-space:pre-line}.options{display:grid;grid-template-columns:1fr 1fr;gap:15px}.option{min-height:76px;width:100%;display:flex;align-items:center;gap:16px;text-align:left;padding:14px 18px;border:2px solid #233879;border-radius:16px;background:#101d42b8;color:#eaf0ff;font:500 17px Georgia,serif;cursor:pointer;transition:transform .18s,border-color .18s,background .18s}.option:hover:not(:disabled){transform:translateY(-2px);border-color:#5b66dc;background:#162858}.letter{width:49px;height:49px;border-radius:50%;display:grid;place-items:center;flex:0 0 auto;background:linear-gradient(140deg,#4f30a9,#263b9c);font:bold 20px 'DM Sans',sans-serif;color:white}.option.selected{border-color:var(--cyan);background:linear-gradient(110deg,#0b2852,#12366a);box-shadow:0 0 0 1px #00c9ff20}.option.selected .letter{background:linear-gradient(140deg,#10b5ff,#1679ed)}.option.correct{border-color:var(--green);background:#063e3e70}.option.correct .letter{background:#0ba984}.option.wrong{border-color:var(--red);background:#481a3b80}.option.wrong .letter{background:#d93665}.option:disabled{cursor:default}.feedback{display:none;margin-top:23px;padding:17px 19px;border:1px solid #1749b3;border-radius:16px;background:linear-gradient(110deg,#0d2452,#0c1b40)}.feedback.show{display:block;animation:fadeup .25s ease}.feedback h3{font-size:15px;color:var(--cyan);margin:0 0 7px;display:flex;gap:10px;align-items:center}.feedback p{font-size:14px;line-height:1.75;color:#d0dcff;margin:0}.bottom-row{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:27px}.helper{border:1px solid #24418e;border-radius:18px;padding:14px 17px;background:#11234f;color:#d1dcff;display:flex;align-items:center;gap:12px;font-size:12px;min-height:48px}.helper-icon{font-size:19px;color:#79a6ff}.btn{border:none;background:linear-gradient(100deg,#8433ff,#008eff);border-radius:16px;color:white;font:700 14px 'DM Sans',sans-serif;padding:17px 25px;min-height:52px;cursor:pointer;box-shadow:0 8px 25px #003b9e35;transition:transform .18s,filter .18s;white-space:nowrap}.btn:hover:not(:disabled){transform:translateY(-2px);filter:brightness(1.13)}.btn:disabled{opacity:.45;cursor:not-allowed;box-shadow:none}.btn.secondary{background:#132350;border:1px solid #334b94;box-shadow:none}.sidebar{display:flex;flex-direction:column;gap:20px}.side-card{padding:21px 21px 22px}.side-title{display:flex;align-items:center;gap:12px;font:700 16px Manrope,sans-serif;margin:0 0 22px}.side-title .symbol{font-size:22px;color:#9b9dff}.question-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.qnum{position:relative;border:1px solid #253d84;color:#c9d3f9;background:#0c1940;border-radius:11px;min-height:48px;font:700 16px 'DM Sans',sans-serif;cursor:pointer;transition:.2s}.qnum:hover{border-color:#6b77e8}.qnum.current{color:white;background:linear-gradient(140deg,#00c9ff,#1684ff);border-color:#20d7ff;box-shadow:0 0 18px #008dff30}.qnum.done{border-color:#078d7b;background:#073b47}.qnum.done:after{content:'✓';position:absolute;right:4px;bottom:0;color:#35f0c7;font-size:11px}.qnum.wrongdone{border-color:#b62d5b;background:#45182f}.qnum.wrongdone:after{content:'×';position:absolute;right:4px;bottom:0;color:#ff829b;font-size:12px}.progress-flex{display:flex;align-items:center;gap:20px}.donut{--percent:10;width:116px;height:116px;flex:0 0 auto;border-radius:50%;background:conic-gradient(#11e0b4 calc(var(--percent)*1%),#293d86 0);display:grid;place-items:center;position:relative}.donut:before{content:"";position:absolute;inset:11px;border-radius:50%;background:#0b1637}.donut strong{font:800 23px Manrope,sans-serif;z-index:1}.legend{display:flex;flex-direction:column;gap:13px;flex:1}.legend-row{display:flex;align-items:center;gap:9px;color:#c5cff4;font-size:13px}.legend-row strong{margin-left:auto;color:#fff;font-size:14px}.dot{width:10px;height:10px;border-radius:50%;flex:0 0 auto}.dot.green{background:#0bd5a5}.dot.red{background:#ff4167}.dot.blue{background:#425ba8}.quote-card{min-height:170px;position:relative;overflow:hidden}.quote-mark{font:bold 48px Georgia,serif;line-height:35px;color:#398dff}.quote-card blockquote{font-style:italic;line-height:1.65;color:#d4defd;font-size:14px;margin:7px 0 9px 24px}.quote-card cite{margin-left:24px;font-style:normal;font-size:11px;color:#869bdc}.books{height:132px;position:relative;overflow:hidden;margin-top:-1px}.book-stack{position:absolute;right:18px;bottom:4px;width:145px;transform:rotate(-2deg)}.book{height:22px;border-radius:5px 10px 10px 5px;margin-top:4px;box-shadow:inset 0 -4px #0002,0 4px 9px #0002;border:1px solid #1e88ff}.book:nth-child(1){background:linear-gradient(90deg,#075ce7,#168eff);width:135px;margin-left:7px}.book:nth-child(2){background:linear-gradient(90deg,#1645ba,#277dff);width:150px}.book:nth-child(3){background:linear-gradient(90deg,#07378e,#245be2);width:139px;margin-left:9px}.cup{position:absolute;right:45px;bottom:71px;width:57px;height:45px;border-radius:5px 5px 15px 15px;background:linear-gradient(90deg,#0450c5,#147bff);z-index:2}.cup:before{content:"";position:absolute;top:-7px;left:-3px;width:63px;height:13px;border-radius:50%;background:#1479ff;border:2px solid #1a90ff}.pencil{position:absolute;bottom:111px;right:69px;width:6px;height:44px;border-radius:4px;background:#06c6ff;transform:rotate(22deg);z-index:1}.pencil:after{content:"";position:absolute;top:-8px;border-left:3px solid transparent;border-right:3px solid transparent;border-bottom:9px solid #63dcff}
+.result-view{display:none;text-align:center;padding:12px 0 4px}.result-view.show{display:block;animation:fadeup .35s ease}.result-emoji{font-size:57px;margin-bottom:12px}.result-view h2{font:800 29px Manrope,sans-serif;margin:0 0 9px}.result-view>p{color:var(--muted);font-size:14px;line-height:1.7;max-width:480px;margin:0 auto}.score-ring{width:145px;height:145px;border-radius:50%;display:grid;place-content:center;margin:25px auto;background:radial-gradient(circle,#0b1739 57%,transparent 59%),conic-gradient(#9a43ff,#04cfff,#9a43ff);box-shadow:0 0 30px #5d36df28}.score-ring strong{font:800 37px Manrope}.score-ring span{font-size:10px;color:#b8c6f4}.result-stats{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:22px auto}.result-stat{padding:14px 24px;background:#101e47;border:1px solid #263d83;border-radius:13px;min-width:110px}.result-stat strong{font:800 23px Manrope;display:block}.result-stat small{color:var(--muted);font-size:12px}.review{margin-top:32px;text-align:left}.review h3{font:700 17px Manrope;margin-bottom:14px}.review-item{margin-bottom:10px;padding:15px;border-radius:12px;border:1px solid #213875;background:#0b1940;font-size:13px;line-height:1.8;color:#d5dfff}.review-item strong{display:block;color:#f4f6ff;margin-bottom:5px}.review-item .review-answer{color:#78dfff}.review-item .review-explanation{display:block;color:#aebfe9;margin-top:4px}.footer{text-align:center;padding:22px 10px;color:#687cad;font-size:11px}
+@keyframes fadeup{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:1050px){.layout{grid-template-columns:minmax(0,1fr) 270px;gap:17px}.nav-right{gap:18px}.quiz-card{padding:23px}.welcome:after{opacity:.35}.progress-flex{gap:12px}.donut{width:95px;height:95px}.side-card{padding:18px}.question-grid{gap:7px}.qnum{min-height:43px}}
+@media(max-width:790px){.nav{padding:15px 18px}.nav-right a{display:none}.layout{grid-template-columns:1fr}.sidebar{display:grid;grid-template-columns:1fr 1fr;align-items:start}.quote-card{grid-column:auto}.books{display:none}.side-card{height:100%}.welcome:after{display:none}}
+@media(max-width:540px){main{padding:19px 13px 35px}.nav{padding:13px}.brand-icon{width:41px;height:41px;font-size:23px}.brand-name{font-size:22px}.brand-sub{font-size:11px}.grade-pill{padding:8px 10px;font-size:10px}.welcome{padding:16px;gap:13px;min-height:100px}.rocket{width:49px;height:49px;font-size:24px}.welcome h2{font-size:15px;line-height:1.5}.welcome p{font-size:12px;line-height:1.6}.quiz-card{padding:18px 15px}.quiz-head{align-items:flex-start;flex-direction:column}.q-label{font-size:16px}.head-pills{width:100%;justify-content:space-between}.mini-pill{font-size:11px;padding:8px 10px}.progress-track{margin-bottom:23px}.question{font-size:20px}.options{grid-template-columns:1fr;gap:10px}.option{min-height:65px;padding:10px 13px;font-size:16px}.letter{width:42px;height:42px}.bottom-row{align-items:stretch;flex-direction:column}.helper{padding:11px 12px}.btn{width:100%;padding:14px 15px}.sidebar{grid-template-columns:1fr}.side-card{padding:18px}.question-grid{grid-template-columns:repeat(5,1fr);gap:9px}.qnum{min-height:45px}.progress-flex{justify-content:center}.donut{width:105px;height:105px}.legend{max-width:170px}.quote-card blockquote{margin-left:15px}.quote-card cite{margin-left:15px}.result-view h2{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="math-float" aria-hidden="true"><span>x²</span><span>∫</span><span>ƒ(x)</span><span>π</span><span>√2</span><span>a²+b²=c²</span><span>∑</span><span>θ</span></div>
+<header>
+  <div class="nav">
+    <a class="brand" href="#top" aria-label="MathVerse beranda">
+      <div class="brand-icon">⊞</div>
+      <div><div class="brand-name">Math<em>Verse</em></div><div class="brand-sub">Matematika Lanjutan Kelas 12</div></div>
+    </a>
+    <div class="nav-right"><a href="#top">Beranda</a><a class="active" href="#kuis">Kuis</a><a href="#tentang">Tentang</a><div class="grade-pill"><b>◆</b> Kelas XII • SMA</div></div>
+  </div>
+</header>
+<main id="top">
+  <div class="layout">
+    <section class="left-column">
+      <div class="welcome"><div class="rocket">🚀</div><div><h2>Tantang dirimu, raih skor terbaik!</h2><p>Matematika bukan hanya tentang angka, tapi tentang cara berpikir.</p></div></div>
+      <section class="quiz-card" id="kuis">
+        <div id="quizView">
+          <div class="quiz-head"><div class="q-label"><span class="paper-icon">▤</span><span id="questionLabel">Pertanyaan 01 / 10</span></div><div class="head-pills"><div class="mini-pill">ϟ <span id="answeredTop">0</span> dijawab</div><div class="mini-pill timer">◴ <span id="timerText">00:00</span></div></div></div>
+          <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+          <div class="category" id="category">Limit Fungsi</div>
+          <h1 class="question" id="questionText">Memuat soal...</h1>
+          <div class="options" id="options"></div>
+          <div class="feedback" id="feedback" aria-live="polite"><h3 id="feedbackTitle">✦ Pembahasan</h3><p id="feedbackText"></p></div>
+          <div class="bottom-row"><div class="helper"><span class="helper-icon">ⓘ</span><span id="helperText">Pilih satu jawaban yang paling tepat.</span></div><button class="btn" id="nextBtn" disabled>Selanjutnya →</button></div>
+        </div>
+        <div class="result-view" id="resultView">
+          <div class="result-emoji" id="resultEmoji">🏆</div><h2 id="resultTitle">Kuis Selesai!</h2><p id="resultMessage">Kamu sudah menyelesaikan semua soal.</p>
+          <div class="score-ring"><strong id="finalScore">0</strong><span>DARI 100 POIN</span></div>
+          <div class="result-stats"><div class="result-stat"><strong id="correctCount">0</strong><small>Benar ✓</small></div><div class="result-stat"><strong id="wrongCount">0</strong><small>Salah ×</small></div><div class="result-stat"><strong id="skipCount">0</strong><small>Dilewati</small></div></div>
+          <button class="btn" id="restartBtn">↻ Ulangi Kuis</button>
+          <div class="review"><h3>📘 Pembahasan Jawaban</h3><div id="reviewList"></div></div>
+        </div>
+      </section>
+    </section>
+    <aside class="sidebar">
+      <section class="side-card"><h2 class="side-title"><span class="symbol">▦</span> Daftar Soal</h2><div class="question-grid" id="questionGrid"></div></section>
+      <section class="side-card"><h2 class="side-title"><span class="symbol">✥</span> Progress</h2><div class="progress-flex"><div class="donut" id="donut" style="--percent:0"><strong id="percentText">0%</strong></div><div class="legend"><div class="legend-row"><span class="dot green"></span>Benar<strong id="rightLegend">0</strong></div><div class="legend-row"><span class="dot red"></span>Salah<strong id="wrongLegend">0</strong></div><div class="legend-row"><span class="dot blue"></span>Belum<strong id="remainingLegend">10</strong></div></div></div></section>
+      <section class="side-card quote-card"><div class="quote-mark">“</div><blockquote>SEMANGAT YA SAYANG KU KERJAIN NYA MELODING I LOVE YOUUU <3 </blockquote><cite>— Rakha Ganesha</cite></section>
+      <div class="books" aria-hidden="true"><div class="pencil"></div><div class="cup"></div><div class="book-stack"><div class="book"></div><div class="book"></div><div class="book"></div></div></div>
+    </aside>
+  </div>
+  <footer class="footer" id="tentang">MathVerse © 2026 · Belajar Matematika Jadi Lebih Seru ✦</footer>
+</main>
+<script>
+const questions = [
+ {category:'Limit Fungsi',q:'Nilai dari lim x→2 (x² − 4) / (x − 2) adalah ...',options:['0','2','4','Tidak terdefinisi'],answer:2,explanation:'Faktorkan x² − 4 = (x − 2)(x + 2). Setelah disederhanakan, bentuknya menjadi x + 2. Substitusikan x = 2, sehingga hasil limitnya adalah 4.'},
+ {category:'Turunan Fungsi',q:'Jika f(x) = 3x² − 4x + 5, maka f′(x) adalah ...',options:['6x − 4','3x − 4','6x + 5','3x² − 4'],answer:0,explanation:'Gunakan aturan pangkat: turunan 3x² adalah 6x, turunan −4x adalah −4, dan turunan konstanta 5 adalah 0. Jadi f′(x) = 6x − 4.'},
+ {category:'Integral',q:'Hasil dari ∫(6x² + 4x) dx adalah ...',options:['12x + 4 + C','2x³ + 2x² + C','3x³ + 4x² + C','2x³ + 4x + C'],answer:1,explanation:'Integral 6x² adalah 2x³, sedangkan integral 4x adalah 2x². Jangan lupa konstanta integrasi C. Hasilnya 2x³ + 2x² + C.'},
+ {category:'Peluang',q:'Sebuah dadu bersisi enam dilempar sekali. Peluang muncul angka genap adalah ...',options:['1/6','1/3','1/2','2/3'],answer:2,explanation:'Angka genap yang mungkin muncul adalah 2, 4, dan 6. Ada 3 hasil yang sesuai dari 6 kemungkinan. Jadi peluangnya 3/6 = 1/2.'},
+ {category:'Matriks',q:'Diketahui A = [[2, 1], [3, 4]]. Determinan matriks A adalah ...',options:['5','8','11','14'],answer:0,explanation:'Untuk matriks 2 × 2, determinan = ad − bc. Jadi det(A) = (2 × 4) − (1 × 3) = 8 − 3 = 5.'},
+ {category:'Barisan Geometri',q:'Barisan geometri memiliki suku pertama 3 dan rasio 2. Suku ke-5 adalah ...',options:['24','32','48','96'],answer:2,explanation:'Rumus suku ke-n adalah Un = a × r⁽ⁿ⁻¹⁾. Maka U₅ = 3 × 2⁴ = 3 × 16 = 48.'},
+ {category:'Trigonometri',q:'Jika sin θ = 3/5 dan θ sudut lancip, nilai cos θ adalah ...',options:['2/5','3/4','4/5','5/4'],answer:2,explanation:'Gunakan identitas sin² θ + cos² θ = 1. Maka cos θ = √(1 − 9/25) = √(16/25) = 4/5. Karena sudut lancip, cos bernilai positif.'},
+ {category:'Vektor',q:'Jika vektor a = (2, 3) dan b = (4, −1), maka a · b adalah ...',options:['5','8','11','13'],answer:0,explanation:'Hasil kali titik vektor dihitung dengan mengalikan komponen bersesuaian lalu menjumlahkannya. a · b = (2 × 4) + (3 × −1) = 8 − 3 = 5.'},
+ {category:'Statistika',q:'Rata-rata dari data 4, 6, 8, 10, 12 adalah ...',options:['6','7','8','10'],answer:2,explanation:'Jumlah semua data adalah 4 + 6 + 8 + 10 + 12 = 40. Banyak data ada 5. Rata-rata = 40/5 = 8.'},
+ {category:'Turunan dan Titik Stasioner',q:'Fungsi f(x) = x² − 6x + 5 mencapai nilai minimum saat x = ...',options:['−3','0','3','6'],answer:2,explanation:'Titik stasioner diperoleh saat f′(x) = 0. Turunannya 2x − 6, sehingga 2x − 6 = 0 menghasilkan x = 3. Karena koefisien x² positif, fungsi mencapai minimum di x = 3.'}
+];
+let current = 0;
+let answers = Array(questions.length).fill(null);
+let startedAt = Date.now();
+let timerInterval;
+const $ = id => document.getElementById(id);
+function makeQuestionGrid(){
+ const grid=$('questionGrid');grid.innerHTML='';
+ questions.forEach((q,i)=>{const b=document.createElement('button');b.className='qnum';b.textContent=i+1;b.type='button';b.setAttribute('aria-label','Buka soal '+(i+1));b.addEventListener('click',()=>{current=i;renderQuestion();document.getElementById('kuis').scrollIntoView({behavior:'smooth',block:'start'});});grid.appendChild(b);});
+}
+function updateProgress(){
+ const answered=answers.filter(v=>v!==null).length;
+ const correct=answers.filter((v,i)=>v===questions[i].answer).length;
+ const wrong=answers.filter((v,i)=>v!==null&&v!==questions[i].answer).length;
+ $('answeredTop').textContent=answered;
+ $('progressBar').style.width=(((current+1)/questions.length)*100)+'%';
+ $('donut').style.setProperty('--percent',(answered/questions.length)*100);
+ $('percentText').textContent=Math.round(answered/questions.length*100)+'%';
+ $('rightLegend').textContent=correct;$('wrongLegend').textContent=wrong;$('remainingLegend').textContent=questions.length-answered;
+ [...$('questionGrid').children].forEach((b,i)=>{b.className='qnum';if(answers[i]!==null)b.classList.add(answers[i]===questions[i].answer?'done':'wrongdone');if(i===current)b.classList.add('current');});
+}
+function renderQuestion(){
+ const item=questions[current];
+ $('questionLabel').textContent=`Pertanyaan ${String(current+1).padStart(2,'0')} / ${questions.length}`;
+ $('progressBar').style.width=(((current+1)/questions.length)*100)+'%';
+ $('category').textContent=item.category;$('questionText').textContent=item.q;
+ $('options').innerHTML='';$('feedback').classList.remove('show');
+ $('helperText').textContent='Pilih satu jawaban yang paling tepat.';
+ $('nextBtn').disabled=true;$('nextBtn').textContent=current===questions.length-1?'Lihat Hasil →':'Selanjutnya →';
+ item.options.forEach((text,i)=>{
+   const b=document.createElement('button');b.type='button';b.className='option';
+   const letter=document.createElement('span');letter.className='letter';letter.textContent=String.fromCharCode(65+i);
+   const label=document.createElement('span');label.textContent=text;b.append(letter,label);b.addEventListener('click',()=>chooseAnswer(i));$('options').appendChild(b);
+ });
+ if(answers[current]!==null)showAnswer(answers[current]);
+ updateProgress();
+}
+function chooseAnswer(index){if(answers[current]!==null)return;answers[current]=index;showAnswer(index);updateProgress();}
+function showAnswer(index){
+ const item=questions[current];const buttons=[...$('options').children];
+ buttons.forEach((b,i)=>{b.disabled=true;if(i===item.answer)b.classList.add('correct');if(i===index&&index!==item.answer)b.classList.add('wrong');});
+ $('feedbackTitle').textContent=index===item.answer?'✓ Jawaban Benar!':'✦ Pembahasan Jawaban';
+ $('feedbackText').textContent=item.explanation;$('feedback').classList.add('show');
+ $('helperText').textContent=index===item.answer?'Tepat sekali! Lanjut ke soal berikutnya.':'Pelajari pembahasan, lalu lanjutkan.';
+ $('nextBtn').disabled=false;
+}
+$('nextBtn').addEventListener('click',()=>{
+ if(answers[current]===null){$('helperText').textContent='Pilih jawaban terlebih dahulu, atau buka nomor soal lain.';return;}
+ if(current<questions.length-1){current++;renderQuestion();}else showResult();
+});
+function showResult(){
+ $('quizView').style.display='none';$('resultView').classList.add('show');
+ const correct=answers.filter((v,i)=>v===questions[i].answer).length;
+ const wrong=answers.filter((v,i)=>v!==null&&v!==questions[i].answer).length;
+ const skipped=answers.filter(v=>v===null).length;const score=correct*10;
+ $('finalScore').textContent=score;$('correctCount').textContent=correct;$('wrongCount').textContent=wrong;$('skipCount').textContent=skipped;
+ if(score>=80){$('resultEmoji').textContent='🏆';$('resultTitle').textContent='Luar Biasa!';$('resultMessage').textContent='Pemahaman matematikamu sangat baik. Pertahankan prestasimu!';}
+ else if(score>=60){$('resultEmoji').textContent='🌟';$('resultTitle').textContent='Kerja Bagus!';$('resultMessage').textContent='Kamu sudah cukup baik. Pelajari kembali soal yang belum tepat.';}
+ else{$('resultEmoji').textContent='💪';$('resultTitle').textContent='Tetap Semangat!';$('resultMessage').textContent='Baca pembahasan, pelajari konsepnya, lalu coba lagi untuk meningkatkan skor.';}
+ $('reviewList').innerHTML='';
+ questions.forEach((q,i)=>{const div=document.createElement('div');div.className='review-item';
+ const strong=document.createElement('strong');strong.textContent=`${i+1}. ${q.q}`;
+ const answer=document.createElement('div');answer.className='review-answer';answer.textContent=`Jawaban benar: ${String.fromCharCode(65+q.answer)}. ${q.options[q.answer]}`;
+ const yours=document.createElement('div');yours.textContent='Jawabanmu: '+(answers[i]===null?'Dilewati':String.fromCharCode(65+answers[i])+'. '+q.options[answers[i]]);yours.style.color=answers[i]===null?'#aebfe9':answers[i]===q.answer?'#42e9c1':'#ff8ba4';
+ const expl=document.createElement('span');expl.className='review-explanation';expl.textContent=q.explanation;div.append(strong,answer,yours,expl);$('reviewList').appendChild(div);});
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+$('restartBtn').addEventListener('click',()=>{current=0;answers=Array(questions.length).fill(null);startedAt=Date.now();$('resultView').classList.remove('show');$('quizView').style.display='block';renderQuestion();window.scrollTo({top:0,behavior:'smooth'});});
+function tickTimer(){const total=Math.floor((Date.now()-startedAt)/1000);const m=String(Math.floor(total/60)).padStart(2,'0');const s=String(total%60).padStart(2,'0');$('timerText').textContent=m+':'+s;}
+makeQuestionGrid();renderQuestion();tickTimer();timerInterval=setInterval(tickTimer,1000);
+</script>
+</body>
+</html>
